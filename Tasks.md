@@ -1,3 +1,3 @@
 TODO:
 
-Write all the tasks for the project
+Write all the tasks for the project.
