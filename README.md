@@ -12,15 +12,15 @@ There are three students participating in the development of the system:
 
 
 ## Development Environment ##
-It is planned to develop the system in PHP 7.1 environment using Laravel 5.6 library. It is planned to use MySQL database for data storage. The code will be stored in the GitHub system.
+   It is planned to develop the system in PHP 7.1 environment using Laravel 5.6 library. It is planned to use MySQL database for data storage. The code will be stored in the GitHub system.
 
 ## Main Functionality ##
-Within the framework of the practical assignment, it is planned to develop a system in which you can keep up with the latest games in hockey. It will be possible to see Games, tournament tree and users will be able to comment on games and subscribe to teams to get news on: new games and tournaments in which the team is involved in ,new players and coaches in the team ,or if some players leave the team , or team has changed their lineups.
+   Within the framework of the practical assignment, it is planned to develop a system in which you can keep up with the latest games in hockey. It will be possible to see Games, tournament tree and users will be able to comment on games and subscribe to teams to get news on: new games and tournaments in which the team is involved in ,new players and coaches in the team ,or if some players leave the team , or team has changed their lineups.
 Administrators will post all of this data and flag comments as offensive ,if user makes 10 offensive comments he will be automatically banned ,or he can be banned manually before that.
 
 
 ## Data Registry ##
-The most important parts of this ER model are:Participant and Team,Participant can be either player or coach depending on Role ,all of them belong to a certain Team has Lineups and each team is in a League  ,these Leagues can have Tournaments which will have all teams participating.Tournaments consist of Games.After a game has concluded Users can Comment on it and if a user wishes ,he can subscribe to a team to get updated on the newest events surrounding this team.
+   The most important parts of this ER model are:Participant and Team,Participant can be either player or coach depending on Role ,all of them belong to a certain Team has Lineups and each team is in a League  ,these Leagues can have Tournaments which will have all teams participating.Tournaments consist of Games.After a game has concluded Users can Comment on it and if a user wishes ,he can subscribe to a team to get updated on the newest events surrounding this team.
 
 
 ## MVC ##
@@ -53,15 +53,15 @@ The system will be implemented following an MVC paradigm. The system will be dis
 
 ## Controllers: ##
 
-   TeamController with methods for retrieving and showing a list of teams (index), creating (create) and saving (strore) new teams, deleting (destroy) a team, as well as editing (edit) and saving changes in the database (update) to an existing team,  returning a list of galleries filtered by search string in gallery name (search);
+   -TeamController with methods for retrieving and showing a list of teams (index), creating (create) and saving (strore) new teams, deleting (destroy) a team, as well as editing (edit) and saving changes in the database (update) to an existing team,  returning a list of galleries filtered by search string in gallery name (search);
 
-   ParticipantController with methods for retrieving and showing a list of participants (index), creating (create) and saving (strore) new participants, deleting (destroy) participants, as well as editing (edit) and saving changes in the database (update) to  existing participants, returning a list of galleries filtered by search string in gallery name (search);
+   -ParticipantController with methods for retrieving and showing a list of participants (index), creating (create) and saving (strore) new participants, deleting (destroy) participants, as well as editing (edit) and saving changes in the database (update) to  existing participants, returning a list of galleries filtered by search string in gallery name (search);
 
-   TournamentController with methods for retrieving and showing a list of tournament (index), creating (create) and saving (strore) a new tournament, deleting (destroy) tournaments, as well as editing (edit) and saving changes in the database (update) to existing tournaments, returning a list of galleries filtered by search string in gallery name (search);
+   -TournamentController with methods for retrieving and showing a list of tournament (index), creating (create) and saving (strore) a new tournament, deleting (destroy) tournaments, as well as editing (edit) and saving changes in the database (update) to existing tournaments, returning a list of galleries filtered by search string in gallery name (search);
 
-   LeaguesController with methods for retrieving and showing a list of leagues (index), creating (create) and saving (strore) new leagues, deleting (destroy) leagues, as well as editing (edit) and saving changes in the database (update) to existing leagues, returning a list of galleries filtered by search string in gallery name (search);
+   -LeaguesController with methods for retrieving and showing a list of leagues (index), creating (create) and saving (strore) new leagues, deleting (destroy) leagues, as well as editing (edit) and saving changes in the database (update) to existing leagues, returning a list of galleries filtered by search string in gallery name (search);
 
-   LineupController with methods for retrieving and showing a list of lineup (index), creating (create) and saving (strore) new lineups, deleting (destroy) lineups, as well as editing (edit) and saving changes in the database (update) to existing lineups, returning a list of galleries filtered by search string in gallery name (search);
+   -LineupController with methods for retrieving and showing a list of lineup (index), creating (create) and saving (strore) new lineups, deleting (destroy) lineups, as well as editing (edit) and saving changes in the database (update) to existing lineups, returning a list of galleries filtered by search string in gallery name (search);
 
 ## User Roles ##
 
