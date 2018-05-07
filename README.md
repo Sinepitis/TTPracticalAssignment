@@ -1,6 +1,6 @@
-#Description of Practical Assignment “hockey-flop”#
+# Description of Practical Assignment “hockey-flop” #
 
-##Team of Developers##
+## Team of Developers ##
 
 There are three students participating in the development of the system: 
 
