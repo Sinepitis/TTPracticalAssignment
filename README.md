@@ -140,8 +140,8 @@ Each next user inherits previous user roles.
     3.Ban Users ,except for Super Admin.
 
 ### Super Administrator: ###
-    2.Change user roles.
-    3.Ban Users.
+    1.Change user roles.
+    2.Ban Users.
 
 
 ## User Authentication  ##
