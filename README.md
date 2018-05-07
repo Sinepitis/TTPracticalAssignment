@@ -53,15 +53,15 @@ The system will be implemented following an MVC paradigm. The system will be dis
 
 ## Controllers: ##
 
-    TeamController with methods for retrieving and showing a list of teams (index), creating (create) and saving (strore) new teams, deleting (destroy) a team, as well as editing (edit) and saving changes in the database (update) to an existing team,  returning a list of galleries filtered by search string in gallery name (search);
+   TeamController with methods for retrieving and showing a list of teams (index), creating (create) and saving (strore) new teams, deleting (destroy) a team, as well as editing (edit) and saving changes in the database (update) to an existing team,  returning a list of galleries filtered by search string in gallery name (search);
 
-    ParticipantController with methods for retrieving and showing a list of participants (index), creating (create) and saving (strore) new participants, deleting (destroy) participants, as well as editing (edit) and saving changes in the database (update) to  existing participants, returning a list of galleries filtered by search string in gallery name (search);
+   ParticipantController with methods for retrieving and showing a list of participants (index), creating (create) and saving (strore) new participants, deleting (destroy) participants, as well as editing (edit) and saving changes in the database (update) to  existing participants, returning a list of galleries filtered by search string in gallery name (search);
 
-    TournamentController with methods for retrieving and showing a list of tournament (index), creating (create) and saving (strore) a new tournament, deleting (destroy) tournaments, as well as editing (edit) and saving changes in the database (update) to existing tournaments, returning a list of galleries filtered by search string in gallery name (search);
+   TournamentController with methods for retrieving and showing a list of tournament (index), creating (create) and saving (strore) a new tournament, deleting (destroy) tournaments, as well as editing (edit) and saving changes in the database (update) to existing tournaments, returning a list of galleries filtered by search string in gallery name (search);
 
-    LeaguesController with methods for retrieving and showing a list of leagues (index), creating (create) and saving (strore) new leagues, deleting (destroy) leagues, as well as editing (edit) and saving changes in the database (update) to existing leagues, returning a list of galleries filtered by search string in gallery name (search);
+   LeaguesController with methods for retrieving and showing a list of leagues (index), creating (create) and saving (strore) new leagues, deleting (destroy) leagues, as well as editing (edit) and saving changes in the database (update) to existing leagues, returning a list of galleries filtered by search string in gallery name (search);
 
-    LineupController with methods for retrieving and showing a list of lineup (index), creating (create) and saving (strore) new lineups, deleting (destroy) lineups, as well as editing (edit) and saving changes in the database (update) to existing lineups, returning a list of galleries filtered by search string in gallery name (search);
+   LineupController with methods for retrieving and showing a list of lineup (index), creating (create) and saving (strore) new lineups, deleting (destroy) lineups, as well as editing (edit) and saving changes in the database (update) to existing lineups, returning a list of galleries filtered by search string in gallery name (search);
 
 ## User Roles ##
 
@@ -144,13 +144,13 @@ Visitor:
 
 
 ## User Authentication  ##
-    There will be a local registration with e-mails .Authentication will be done by user name and password.Passwords will be encrypted.User browser will receive a token which will be valid for 5 hours ,or until user logs out.
+   There will be a local registration with e-mails .Authentication will be done by user name and password.Passwords will be encrypted.User browser will receive a token which will be valid for 5 hours ,or until user logs out.
 
 
 
 
 ## System Interface ##
-    The image shows the form for a game score. In the form a user can choose to subscribe to a team which tournament they are viewing. Also a user can choose to view the comments for a match, news about this match, teams involved, pictures of the match and the best moments in a video format. Similarly, there are operations available to the user where they can choose to view the their subscribed teams and tournaments, news about popular tournaments and games, and chat with the general public.
+   The image shows the form for a game score. In the form a user can choose to subscribe to a team which tournament they are viewing. Also a user can choose to view the comments for a match, news about this match, teams involved, pictures of the match and the best moments in a video format. Similarly, there are operations available to the user where they can choose to view the their subscribed teams and tournaments, news about popular tournaments and games, and chat with the general public.
 
 
 
