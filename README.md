@@ -65,7 +65,14 @@ The system will be implemented following an MVC paradigm. The system will be dis
 
 ## User Roles ##
 
-There will be five kind of roles:Visitor, User, Administrator, System Administrator, Super Admin.
+There will be five kind of roles:
+
+-  Visitor, 
+-  User, 
+-  Administrator, 
+-  System Administrator, 
+-  Super Admin.
+
 Each next user inherits previous user roles.
 
 ### Visitor: ###
