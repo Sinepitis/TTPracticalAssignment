@@ -11,14 +11,16 @@ initial:
 	sudo apt install php7.1 php7.1-xml php7.1-mbstring php7.1-mysql php7.1-json php7.1-curl php7.1-cli php7.1-common php7.1-mcrypt php7.1-gd libapache2-mod-php7.1 php7.1-zip
 	curl -sS https://getcomposer.org/installer | php
 	sudo mv composer.phar /usr/bin/composer
-	composer install
 	docker-compose -f docker-compose.mysql.yml up -d --force-recreate
+
+
+initial2:
 	php ./project/artisan migrate
 	php ./project/artisan migrate:refresh --seed
-	cd project/public
 	sudo apt-get update
 	sudo apt-get install npm
-	php -S 0.0.0.0:8080 index.php
+	php -S 0.0.0.0:8080 ./project/public/index.php
+
 
 my-sql-build:
 	docker-compose -f docker-compose.mysql.yml up -d --force-recreate
