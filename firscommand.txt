@@ -1,0 +1,2 @@
+sudo apt-get install make
+git clone https://bitbucket.org/andit-team/neo-apiv2/src/master

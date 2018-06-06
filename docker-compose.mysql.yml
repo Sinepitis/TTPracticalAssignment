@@ -1,0 +1,35 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+
+services:
+  mysql:
+    image: mysql:5.7.22
+    container_name: mydatabase
+    restart: unless-stopped
+    ports:
+      - ${MYSQL_PORT}:3306
+    environment:
+        MYSQL_DATABASE: Hockeyflop
+        MYSQL_ROOT_PASSWORD: ${MYSQL_PWD}
+    networks:
+      backend:
+        #ipv4_address: ${MYSQL_SERVER}
+    volumes:
+      - mysql_data:/var/lib/mysql
+  
+
+#192.168.88.147/20
+networks:
+  backend:
+    external: true               
+volumes:
+  mysql_data:
+
+
+
+
+
+
+
+
