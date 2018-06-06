@@ -19,7 +19,7 @@ cd project && composer install && cd ../ && sudo make initial2
 
 ```
 1)Open notepad with administrator privilages.
-2)open file hosts located at C:\Windows\System32\drivers\etc
+2)Open file hosts located at C:\Windows\System32\drivers\etc
 3)Add this line: 192.168.33.10 hockeyflops
 4)Now you can acces the site by typing hockeyflops:8080 in your browser.
 ```
