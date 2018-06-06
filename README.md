@@ -1,3 +1,22 @@
+# Installation: #
+
+## Requirements: Oracle VirtualBox ,Vagrant ,Git. ##
+
+1.Get to the folder which will hold your project it is preffered thats on SSD 
+
+You just need to type 3 commands NOTE!!!:Allthough these 3 commands will install everything necessary you still have to monitor the process constantly and press enter or enter Y when you are prompted to.
+
+```
+
+git clone https://github.com/Sinepitiss/TTPracticalAssignment.git && cd TTPracticalAssignment && vagrant up && vagrant ssh
+
+cd /vagrant && sudo apt-get install make && sudo make initial
+
+cd project && composer install && cd ../ && sudo make initial2
+
+```
+
+
 # Description of Practical Assignment “hockey-flop” #
 
 ## Team of Developers ##
