@@ -3,6 +3,7 @@
 ## Requirements: Oracle VirtualBox ,Vagrant ,Git. ##
 
 1.Get to the folder which will hold your project it is preffered thats on SSD 
+2.Right click in the folder ,select:Git Bash.
 
 You just need to type 3 commands NOTE!!!:Allthough these 3 commands will install everything necessary you still have to monitor the process constantly and press enter or enter Y when you are prompted to.
 
