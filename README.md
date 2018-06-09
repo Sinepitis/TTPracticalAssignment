@@ -178,7 +178,7 @@ Each next user inherits previous user roles.
 
 
 ## User Authentication  ##
-   There will be a local registration with e-mails .Authentication will be done by user name and password.Passwords will be encrypted.User browser will receive a token which will be valid for 5 hours ,or until user logs out.
+   There will be a local registration with e-mails .Authentication will be done by user name and password.Passwords will be encrypted.User browser will receive a token which will be valid for 5 hours ,or until user logs out
 
 
 
