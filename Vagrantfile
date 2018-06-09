@@ -8,8 +8,9 @@
 Vagrant.configure("2") do |config|
  config.vm.provider "virtualbox" do |v|
   v.memory = 10240
-  v.cpus = 10
+  v.cpus = 6
  end
+ 
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
@@ -18,6 +19,7 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "ubuntu/xenial64"
 
+  config.vm.synced_folder '.', '/vagrant'
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -28,11 +30,6 @@ Vagrant.configure("2") do |config|
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
  # config.vm.network "forwarded_port", guest: 8080, host: 80
-  config.vm.provision :hosts do |provisioner|
-
-     provisioner.add_host '127.0.0.1', ['server.digi.vagrant']
-
-   end
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access

@@ -27,6 +27,29 @@ Route::get('/register', function () {
     return view('register');
 })->middleware('roles:0');
 
+Route::get('/games', function () {
+    return view('games');
+})->middleware('roles:0');
+
+Route::get('/teams', function () {
+    return view('teams');
+})->middleware('roles:0');
+
+Route::get('/players', function () {
+    return view('players');
+})->middleware('roles:0');
+
+Route::get('/coaches', function () {
+    return view('coaches');
+})->middleware('roles:0');
+
+Route::get('/leagues', function () {
+    return view('leagues');
+})->middleware('roles:0');
+
+Route::get('/tournaments', function () {
+    return view('tournaments');
+})->middleware('roles:0');
 
 Route::get('/admin','AdminController@GetUsers')->middleware('roles:2');
 

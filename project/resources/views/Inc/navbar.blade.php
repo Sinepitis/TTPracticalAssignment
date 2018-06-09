@@ -82,7 +82,12 @@ li a:hover {
  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <ul class ="navBarUl">
   <li><a class="left" href="/">Home</a></li>
-
+  <li><a class="left" href="/games">Games</a></li>
+  <li><a class="left" href="/teams">Teams</a></li>
+  <li><a class="left" href="/players">Players</a></li>
+  <li><a class="left" href="/coaches">Coaches</a></li>
+  <li><a class="left" href="/leagues">Leagues</a></li>
+  <li><a class="left" href="/tournaments">Tournaments</a></li>
   <li><a class="left" href="/contact">Contact</a></li>
   <li><a class="left" href="/about">About</a></li>
 
@@ -112,6 +117,6 @@ li a:hover {
   </li>
     @endif
 </ul>
-	
+
 </body>
 </html>

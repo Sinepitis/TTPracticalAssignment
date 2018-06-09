@@ -2,7 +2,7 @@
 <html>
     <head>
 	<meta charset="utf-8">
-	<title>Autisti</title>
+	<title>HockeyFlops</title>
 	</head>
 	<body>
 		@include('inc.navbar')

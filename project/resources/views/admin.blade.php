@@ -1,11 +1,11 @@
 @extends('layout.app')
 
 @section('content')
-<h1>Admin<h1> 
+<h1>Admin</h1> 
  <form action="/admin">
   <input type="text" name="like" value=""><br>
   <input type="submit" value="Search">
-</form> 
+</form>
 	@if(count($users) > 0 )
 <table class = "table">
 	<thead>
@@ -22,10 +22,10 @@
 				{{ csrf_field() }}
 				<td class = "fontSmall">{{$user->name}}</td>
 				<td class="fontSmall"><input type ="hidden" name="email" value="{{$user->email}}"> {{$user->email}}</td>
-				
+
 				<td><select name="role">
-					
-						@for ($x = 0; $x <= 4; $x++) 
+
+						@for ($x = 0; $x <= 4; $x++)
 							@if($user->role != $x)
 								<option value="{{$x}}">{{$x}}</option>
 							@else
