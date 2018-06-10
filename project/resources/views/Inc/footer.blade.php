@@ -18,8 +18,8 @@
 </head>
 <body>
 <div class="footer">
-  <p>Powered by &copy Autisms in 2018</p>
+  <p>Powdered by &copy Yumis in 2018</p>
 </div>
 
 </body>
-</html> 
+</html>
