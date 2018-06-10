@@ -17,7 +17,7 @@ class CreateGamesTable extends Migration
             $table->increments('game_id');
             $table->unsignedInteger('team_id_1');
             $table->unsignedInteger('team_id_2');
-            $table->unsignedInteger('tournament_id')
+            $table->unsignedInteger('tournament_id');
             $table->smallInteger('Team1_score');
             $table->smallInteger('Team2_score');
             $table->smallInteger('position');

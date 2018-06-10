@@ -1,9 +1,11 @@
 @extends('layout.app')
 
 @section('content')
+
 <h1>Leagues</h1>
 <form action="/leagues">
- <input type="text" name="like" value=""><br>
+  {{ csrf_field() }}
+ <input maxlength="60" size="60" type="text" name="like" value="{{ app('request')->input('like') }}"><br>
  <input type="submit" value="Search">
 </form>
   @if (count($leagues)==0)

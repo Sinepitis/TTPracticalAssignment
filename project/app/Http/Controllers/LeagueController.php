@@ -12,9 +12,22 @@ class LeagueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $leagues=League::all();
+      $like = $request['like'];
+
+      $this->middleware('roles:2');
+      $thisUser = $request->user();
+      $leagues=League::all();
+
+      foreach($leagues as $key=> $league)
+      {
+        if ($like!==null && (stripos($league['name'], $like) === FALSE))
+        {
+          unset($leagues[$key]);
+        }
+      }
+
         return view('leagues',['leagues'=>$leagues]);
     }
 
