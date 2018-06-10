@@ -1,4 +1,5 @@
 Gatis:
+
 1)made the laravel server
 
 2)made tutorial for setting up everything: in process
@@ -21,6 +22,7 @@ TODO:make fully funtional notifications.
 
 
 Raivis:
+
 1)created most of the views with basic html;
 
 2)created most of the controllers with index method (basic setup);
