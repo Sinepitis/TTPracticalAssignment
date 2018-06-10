@@ -1,8 +1,5 @@
 Vagrantfile
 
 .vagrant/
-<<<<<<< HEAD
-=======
 
 ubuntu-xenial-16.04-cloudimg-console.log
->>>>>>> f875ab1aacc1bc47ac8e597bbe6cb3da1f99a202

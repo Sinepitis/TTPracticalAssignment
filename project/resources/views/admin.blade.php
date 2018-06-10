@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-<h1>Admin</h1> 
+<h1>Admin</h1>
  <form action="/admin">
   <input type="text" name="like" value=""><br>
   <input type="submit" value="Search">

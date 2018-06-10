@@ -85,7 +85,6 @@ li a:hover {
   <li><a class="left" href="/games">Games</a></li>
   <li><a class="left" href="/teams">Teams</a></li>
   <li><a class="left" href="/players">Players</a></li>
-  <li><a class="left" href="/coaches">Coaches</a></li>
   <li><a class="left" href="/leagues">Leagues</a></li>
   <li><a class="left" href="/tournaments">Tournaments</a></li>
   <li><a class="left" href="/contact">Contact</a></li>
