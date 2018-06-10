@@ -41,4 +41,6 @@ Edgars:
 
 2)Made About view.
 
-3)
+3)Created all seeders
+
+4) polished up some Migrations
