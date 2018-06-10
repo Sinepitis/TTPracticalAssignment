@@ -2,7 +2,7 @@ Gatis:
 
 1)made the laravel server
 
-2)made tutorial for setting up everything: in process
+2)made tutorial for setting up everything
 
 3)made auth
 
