@@ -20,7 +20,6 @@ class CreateGamesTable extends Migration
             $table->unsignedInteger('tournament_id');
             $table->smallInteger('Team1_score');
             $table->smallInteger('Team2_score');
-            $table->smallInteger('position');
             $table->string('description');
             $table->date('date_of_game');
 

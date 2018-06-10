@@ -47,3 +47,5 @@ Route::post('/register/submit','RegisterController@submit')->middleware('roles:0
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/contact/submit', 'MessagesController@submit');
