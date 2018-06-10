@@ -3,7 +3,7 @@
 @section('content')
 <h1>Teams</h1>
 <form action="/teams">
- <input type="text" name="like" value=""><br>
+ <input type="text" name="like" value="{{ app('request')->input('like') }}"><br>
  <input type="submit" value="Search">
 </form>
   @if (count($teams)==0)

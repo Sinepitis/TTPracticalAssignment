@@ -12,9 +12,20 @@ class TournamentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+      $like = $request['like'];
+
+      $thisUser = $request->user();
       $tournaments=Tournament::all();
+
+      foreach($tournaments as $key=> $tournament)
+      {
+        if ($like!==null && (stripos($tournament['name'], $like) === FALSE))
+        {
+          unset($tournaments[$key]);
+        }
+      }
       return view('tournaments',['tournaments'=>$tournaments]);
     }
 

@@ -16,7 +16,6 @@ class LeagueController extends Controller
     {
       $like = $request['like'];
 
-      $this->middleware('roles:2');
       $thisUser = $request->user();
       $leagues=League::all();
 

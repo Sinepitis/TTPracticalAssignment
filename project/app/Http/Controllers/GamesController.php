@@ -12,9 +12,21 @@ class GamesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+      $like = $request['like'];
+
+      $thisUser = $request->user();
       $games=Games::all();
+
+      foreach ($games as $key => $game)
+      {
+        if ($like!==null && (stripos($game['name'], $like) === FALSE))
+        {
+          unset($games[$key]);
+        }
+      }
+
         return view('games',['games'=>$games]);
     }
 

@@ -12,9 +12,21 @@ class ParticipantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+      $like = $request['like'];
+
+      $thisUser = $request->user();
       $participants=Participant::all();
+
+      foreach($participants as $key=> $participant)
+      {
+        if ($like!==null && (stripos($participant['name'], $like) === FALSE))
+        {
+          unset($participants[$key]);
+        }
+      }
+
       return view('players',['players'=>$participants]);
     }
 

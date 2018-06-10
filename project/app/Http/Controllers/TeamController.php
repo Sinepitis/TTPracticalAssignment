@@ -12,9 +12,21 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+      $like = $request['like'];
+
+      $thisUser = $request->user();
       $teams=Team::all();
+
+      foreach($teams as $key=> $team)
+      {
+        if ($like!==null && (stripos($team['name'], $like) === FALSE))
+        {
+          unset($teams[$key]);
+        }
+      }
+
       return view('teams',['teams'=>$teams]);
     }
 
