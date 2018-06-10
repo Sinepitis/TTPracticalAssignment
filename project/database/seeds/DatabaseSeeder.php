@@ -21,5 +21,18 @@ class DatabaseSeeder extends Seeder
 		'description'=>'The Kontinental Hockey League (KHL) is an international professional ice hockey league founded in 2008. It comprises 27 member clubs based in Belarus, China, Finland, Kazakhstan, Latvia, Russia, and Slovakia.',
 		'created_on'=>'2008.02.01.',
 		]);
+    /*$this->call([
+    TeamsTableSeeder::class,
+    LineupTableSeeder::class,
+    PlayersTableSeeder::class,
+  ]);*/
+    /*
+    $this->call([
+    LineupTableSeeder::class,
+    ]);
+    $this->call([
+    PlayersTableSeeder::class,
+    ]);
+    */
     }
 }
