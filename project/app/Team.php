@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
+    protected $primaryKey = 'team_id';
     protected $table='team';
     public $timestamps = false;
     public function games(){

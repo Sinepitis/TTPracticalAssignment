@@ -51,7 +51,7 @@ li a:hover {
     text-decoration: none;
 }
 .dropdown:hover .dropbtn {
-    background-color: 42f4b3;
+    background-color: #42f4b3;
 }
 .dropdown {
 	float:right;
@@ -84,11 +84,11 @@ li a:hover {
   <li><a class="left" href="/">Home</a></li>
   <li><a class="left" href="/games">Games</a></li>
   <li><a class="left" href="/teams">Teams</a></li>
+  <li><a class="left" href="/lineups">Lineups</a></li>
   <li><a class="left" href="/players">Players</a></li>
   <li><a class="left" href="/leagues">Leagues</a></li>
   <li><a class="left" href="/tournaments">Tournaments</a></li>
   <li><a class="left" href="/contact">Contact</a></li>
-  <li><a class="left" href="/about">About</a></li>
 
   @if(!Auth::check())
 	<li><a class="right" href="/register">Register</a></li>

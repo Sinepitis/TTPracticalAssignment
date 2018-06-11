@@ -29,14 +29,14 @@
                 <td>
                   <select form ="addForm" name="addTeamID1">
                     @foreach($teams as $team)
-                        <option value="{{$team->team_id}}">{{$team->name}}</option>
+                        <option value="{{$team->team_id}}">{{$team->team_name}}</option>
                     @endforeach
                   </select>
                 </td>
                 <td>
                   <select form ="addForm" name="addTeamID2">
                     @foreach($teams as $team)
-                        <option value="{{$team->team_id}}">{{$team->name}}</option>
+                        <option value="{{$team->team_id}}">{{$team->team_name}}</option>
                     @endforeach
                   </select>
                 </td>
@@ -71,9 +71,9 @@
             <form action="/games/Delete" method="post" >
               {{ csrf_field() }}
               <input type ="hidden" name="gameId" value="{{$game->game_id}}">
-              <td> {{$game->team_id_1}}</td>
-              <td> {{$game->team_id_2}}</td>
-              <td> {{$game->tournament_id}}</td>
+              <td> {{$game->team1Name}}</td>
+              <td> {{$game->team2Name}}</td>
+              <td> {{$game->tournamentName}}</td>
               <td> {{$game->Team1_score}}</td>
               <td> {{$game->Team2_score}}</td>
               <td> {{$game->description}}</td>

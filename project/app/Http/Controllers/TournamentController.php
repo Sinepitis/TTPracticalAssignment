@@ -45,7 +45,11 @@ class TournamentController extends Controller
       $tournaments->save(['timestamps' => false]);
       return redirect()->back();
     }
-
+    public function delete(Request $request)
+    {
+        (Tournament::where('tournament_id',$request['TournamentId'])->first())->delete();
+        return redirect()->back();
+    }
     /**
      * Store a newly created resource in storage.
      *

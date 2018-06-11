@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Lineup;
+use App\Team;
 
 class LineupController extends Controller
 {
@@ -12,9 +13,23 @@ class LineupController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+      $like = $request['like'];
+
+      $thisUser = $request->user();
+      $teams=Team::all();
+      $lineups=Lineup::all();
+
+      foreach($lineups as $key=> $lineup)
+      {
+        $lineup->teamName = Team::where('team_id',$lineup->team_id)->first()->team_name;
+        if ($like!==null && (stripos($lineup['name'], $like) === FALSE))
+        {
+          unset($lineups[$key]);
+        }
+      }
+        return view('lineups',['lineups'=>$lineups, 'teams'=>$teams]);
     }
 
     /**
@@ -22,11 +37,19 @@ class LineupController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $leagues = new Lineup();
+        $leagues->team_id = $request['addTID'];
+        $leagues->name = $request['addName'];
+        $leagues->save(['timestamps' => false]);
+        return redirect()->back();
     }
-
+    public function delete(Request $request)
+    {
+        (Lineup::where('lineup_id',$request['lineupId'])->first())->delete();
+        return redirect()->back();
+    }
     /**
      * Store a newly created resource in storage.
      *

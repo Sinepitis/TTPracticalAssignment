@@ -44,6 +44,11 @@ class LeagueController extends Controller
         return redirect()->back();
     }
 
+    public function delete(Request $request)
+    {
+        (League::where('league_id',$request['leagueId'])->first())->delete();
+        return redirect()->back();
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -97,6 +102,6 @@ class LeagueController extends Controller
      */
     public function destroy($id)
     {
-        
+
     }
 }

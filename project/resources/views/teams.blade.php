@@ -43,10 +43,16 @@
           @endif
     	@foreach ($teams as $team)
     		<tr>
-          <td> {{$team->name}}</td>
-          <td> {{$team->team_description}}</td>
-          <td> {{$team->created_on}}</td>
-          <td> {{$team->league_id}}</td>
+          <form action="/teams/Delete" method="post" >
+            {{ csrf_field() }}
+            <input type ="hidden" name="teamId" value="{{$team->team_id}}">
+            <td> {{$team->team_name}}</td>
+            <td> {{$team->team_description}}</td>
+            <td> {{$team->created_on}}</td>
+            <td> {{$team->league_id}}</td>
+            @if(Auth::check() && Auth::user()->hasRole('2'))
+            <td><input type="submit" value="Delete"></td>
+            @endif
     		</tr>
     	@endforeach
       </tbody>

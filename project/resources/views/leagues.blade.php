@@ -38,18 +38,20 @@
           </form>
           @endif
     	@foreach ($leagues as $league)
-      <form action="/leagues/Delete">
-    		<tr>
-          <td id ="{{$league->league_id}}"> {{$league->name}}</td>
-          <td> {{$league->description}}</td>
-          <td> {{$league->created_on}}</td>
-          @if(Auth::check() && Auth::user()->hasRole('2'))
-          <td>
-              <input type="submit" value="Delete">
-          </td>
-          @endif
-    		</tr>
-      </form>
+      <tr>
+        <form action="/leagues/Delete" method="post">
+      		{{ csrf_field() }}
+            <input type ="hidden" name="leagueId" value="{{$league->league_id}}">
+            <td id ="{{$league->league_id}}"> {{$league->name}}</td>
+            <td> {{$league->description}}</td>
+            <td> {{$league->created_on}}</td>
+            @if(Auth::check() && Auth::user()->hasRole('2'))
+            <td>
+                <input type="submit" value="Delete">
+            </td>
+            @endif
+        </form>
+      </tr>
     	@endforeach
       </tbody>
   	</table>

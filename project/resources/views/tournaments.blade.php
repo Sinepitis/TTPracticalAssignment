@@ -21,8 +21,8 @@
       </thead>
       <tbody>
         @if(Auth::check() && Auth::user()->hasRole('2'))
+        <tr>
         <form action="/tournaments/Add" id ="addForm">
-              <tr>
                 <td>
                   <select form ="addForm" name="addID">
                     @foreach($leagues as $league)
@@ -47,12 +47,18 @@
           @endif
     	@foreach ($tournaments as $tournament)
     		<tr>
-          @if(Auth::check() && Auth::user()->hasRole('2'))
-          <td> {{$tournament->league_id}} </td>
-          @endif
-          <td>{{$tournament->name}}</td>
-          <td> {{$tournament->description}}</td>
-          <td> {{$tournament->created_on}}</td>
+          <form action="/tournaments/Delete" method="post" >
+            {{ csrf_field() }}
+            <input type ="hidden" name="TournamentId" value="{{$tournament->tournament_id}}">
+            @if(Auth::check() && Auth::user()->hasRole('2'))
+            <td> {{$tournament->league_id}} </td>
+            @endif
+            <td>{{$tournament->name}}</td>
+            <td> {{$tournament->description}}</td>
+            <td> {{$tournament->created_on}}</td>
+            @if(Auth::check() && Auth::user()->hasRole('2'))
+            <td><input type="submit" value="Delete"></td>
+            @endif
     		</tr>
     	@endforeach
       </tbody>

@@ -41,8 +41,8 @@ class ParticipantController extends Controller
     public function create(Request $request)
     {
         $participants = new Participant();
-        $participants->team_id = ['addTID'];
-        $participants->lineup_id = ['addLID'];
+        $participants->team_id = $request['addTID'];
+        $participants->lineup_id = $request['addLID'];
         $participants->name = $request['addName'];
         $participants->surname = $request['addSurn'];
         $participants->position = $request['addPos'];
@@ -51,7 +51,11 @@ class ParticipantController extends Controller
         $participants->save(['timestamps' => false]);
         return redirect()->back();
     }
-
+    public function delete(Request $request)
+    {
+        (Participant::where('participant_id',$request['ParticipantId'])->first())->delete();
+        return redirect()->back();
+    }
     /**
      * Store a newly created resource in storage.
      *

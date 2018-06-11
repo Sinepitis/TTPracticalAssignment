@@ -26,6 +26,9 @@ class GamesController extends Controller
 
       foreach ($games as $key => $game)
       {
+        $game->team1Name = Team::where('team_id',$game->team_id_1)->first()->team_name;
+        $game->team2Name = Team::where('team_id',$game->team_id_2)->first()->team_name;
+        $game->tournamentName = Tournament::where('tournament_id',$game->tournament_id)->first()->name;
         if ($like!==null && (stripos($game['name'], $like) === FALSE))
         {
           unset($games[$key]);

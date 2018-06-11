@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class League extends Model
 {
     protected $table='league';
-
+    protected $primaryKey = 'league_id';
     public $timestamps = false;
     public function tournament(){
       return $this->belongsTo('App\Tournament');

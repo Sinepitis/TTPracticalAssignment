@@ -40,13 +40,17 @@ class TeamController extends Controller
     {
       $teams = new Team();
       $teams->league_id = $request['addID'];
-      $teams->name = $request['addName'];
+      $teams->team_name = $request['addName'];
       $teams->team_description = $request['addDesc'];
       $teams->created_on = $request['addDate'];
       $teams->save(['timestamps' => false]);
       return redirect()->back();
     }
-
+    public function delete(Request $request)
+    {
+        (Team::where('team_id',$request['teamId'])->first())->delete();
+        return redirect()->back();
+    }
     /**
      * Store a newly created resource in storage.
      *
