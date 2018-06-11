@@ -35,4 +35,12 @@ TODO: make individual pages for players and teams with access through hyperlinks
 update controllers with CRUD methods and impliment them within views
 
 
-Edgars:?
+Edgars:
+
+1)created form for contact view and linked it with database
+
+2)Made About view.
+
+3)Created all seeders
+
+4) polished up some Migrations

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLineupTable extends Migration
+class CreateMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateLineupTable extends Migration
      */
     public function up()
     {
-        Schema::create('lineup', function (Blueprint $table) {
-            $table->increments('lineup_id');
-            $table->unsignedInteger('team_id');
+        Schema::create('messages', function (Blueprint $table) {
+            $table->increments('Message_id');
             $table->string('name');
-            $table->foreign('team_id')->references('team_id')->on('team');
+            $table->string('email');
+            $table->mediumtext('message');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +29,6 @@ class CreateLineupTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lineup');
+        Schema::dropIfExists('messages');
     }
 }
