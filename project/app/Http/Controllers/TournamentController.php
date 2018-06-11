@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tournament;
+use App\League;
 
 class TournamentController extends Controller
 {
@@ -18,7 +19,7 @@ class TournamentController extends Controller
 
       $thisUser = $request->user();
       $tournaments=Tournament::all();
-
+      $leagues = League::all();
       foreach($tournaments as $key=> $tournament)
       {
         if ($like!==null && (stripos($tournament['name'], $like) === FALSE))
@@ -26,7 +27,7 @@ class TournamentController extends Controller
           unset($tournaments[$key]);
         }
       }
-      return view('tournaments',['tournaments'=>$tournaments]);
+      return view('tournaments',['tournaments'=>$tournaments , 'leagues'=>$leagues]);
     }
 
     /**
@@ -34,9 +35,15 @@ class TournamentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+      $tournaments = new Tournament();
+      $tournaments->league_id = $request['addID'];
+      $tournaments->name = $request['addName'];
+      $tournaments->description = $request['addDesc'];
+      $tournaments->created_on = $request['addDate'];
+      $tournaments->save(['timestamps' => false]);
+      return redirect()->back();
     }
 
     /**

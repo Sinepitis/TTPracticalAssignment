@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Team extends Model
 {
     protected $table='team';
+    public $timestamps = false;
     public function games(){
       return $this->belongsTo('App\Games');
     }

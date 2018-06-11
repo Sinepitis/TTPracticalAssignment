@@ -6,9 +6,6 @@
  <input type="text" name="like" value="{{ app('request')->input('like') }}"><br>
  <input type="submit" value="Search">
 </form>
-  @if (count($teams)==0)
-	 <p color='red'> There is no record in the database!</p>
-  @else
   	<table border="1">
       <thead>
     		<tr>
@@ -19,9 +16,34 @@
     		</tr>
       </thead>
       <tbody>
+        @if(Auth::check() && Auth::user()->hasRole('2'))
+        <form action="/teams/Add" id ="addForm">
+              <tr>
+                <td>
+                    <input type="text" name="addName" value="" form="addForm">
+                </td>
+                <td>
+                    <input type="text"  name="addDesc" value="" form="addForm">
+                </td>
+                <td>
+                    <input type="text" name="addDate" value="" form="addForm">
+                </td>
+                <td>
+                  <select form ="addForm" name="addID">
+                    @foreach($leagues as $league)
+                        <option value="{{$league->league_id}}">{{$league->name}}</option>
+                    @endforeach
+                  </select>
+                </td>
+                <td>
+                    <input type="submit" value="Add" form="addForm">
+                </td>
+              </tr>
+          </form>
+          @endif
     	@foreach ($teams as $team)
     		<tr>
-          <td>{{$team->name}}</td>
+          <td> {{$team->name}}</td>
           <td> {{$team->team_description}}</td>
           <td> {{$team->created_on}}</td>
           <td> {{$team->league_id}}</td>
@@ -29,5 +51,4 @@
     	@endforeach
       </tbody>
   	</table>
-  @endif
 @endsection

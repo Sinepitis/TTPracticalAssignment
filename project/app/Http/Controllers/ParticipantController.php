@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Participant;
+use App\Team;
+use App\Lineup;
 
 class ParticipantController extends Controller
 {
@@ -18,7 +20,8 @@ class ParticipantController extends Controller
 
       $thisUser = $request->user();
       $participants=Participant::all();
-
+      $teams=Team::all();
+      $lineups=Lineup::all();
       foreach($participants as $key=> $participant)
       {
         if ($like!==null && (stripos($participant['name'], $like) === FALSE))
@@ -27,7 +30,7 @@ class ParticipantController extends Controller
         }
       }
 
-      return view('players',['players'=>$participants]);
+      return view('players',['players'=>$participants, 'teams'=>$teams, 'lineups'=>$lineups]);
     }
 
     /**
@@ -35,9 +38,18 @@ class ParticipantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $participants = new Participant();
+        $participants->team_id = ['addTID'];
+        $participants->lineup_id = ['addLID'];
+        $participants->name = $request['addName'];
+        $participants->surname = $request['addSurn'];
+        $participants->position = $request['addPos'];
+        $participants->role = $request['addRole'];
+        $participants->first_joined_team = $request['addDate'];
+        $participants->save(['timestamps' => false]);
+        return redirect()->back();
     }
 
     /**

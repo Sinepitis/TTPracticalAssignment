@@ -26,7 +26,6 @@ class LeagueController extends Controller
           unset($leagues[$key]);
         }
       }
-
         return view('leagues',['leagues'=>$leagues]);
     }
 
@@ -35,9 +34,14 @@ class LeagueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $leagues = new League();
+        $leagues->name = $request['addName'];
+        $leagues->description = $request['addDesc'];
+        $leagues->created_on = $request['addDate'];
+        $leagues->save(['timestamps' => false]);
+        return redirect()->back();
     }
 
     /**
@@ -93,6 +97,6 @@ class LeagueController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }

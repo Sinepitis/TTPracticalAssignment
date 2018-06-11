@@ -7,26 +7,50 @@
  <input type="text" name="like" value="{{ app('request')->input('like') }}"><br>
  <input type="submit" value="Search">
 </form>
-  @if (count($leagues)==0)
-	 <p color='red'> There is no record in the database!</p>
-  @else
   	<table border="1">
       <thead>
     		<tr>
     			<td> Name </td>
     			<td> Description </td>
     			<td> Founded </td>
+          @if(Auth::check() && Auth::user()->hasRole('2'))
+          <td> Action </td>
+          @endif
     		</tr>
       </thead>
       <tbody>
+        @if(Auth::check() && Auth::user()->hasRole('2'))
+        <form action="/leagues/Add" id ="addForm">
+              <tr>
+                <td>
+                    <input type="text" name="addName" value="" form="addForm">
+                </td>
+                <td>
+                    <input type="text"  name="addDesc" value="" form="addForm">
+                </td>
+                <td>
+                    <input type="text" name="addDate" value="" form="addForm">
+                </td>
+                <td>
+                    <input type="submit" value="Add" form="addForm">
+                </td>
+              </tr>
+          </form>
+          @endif
     	@foreach ($leagues as $league)
+      <form action="/leagues/Delete">
     		<tr>
-          <td>{{$league->name}}</td>
+          <td id ="{{$league->league_id}}"> {{$league->name}}</td>
           <td> {{$league->description}}</td>
           <td> {{$league->created_on}}</td>
+          @if(Auth::check() && Auth::user()->hasRole('2'))
+          <td>
+              <input type="submit" value="Delete">
+          </td>
+          @endif
     		</tr>
+      </form>
     	@endforeach
       </tbody>
   	</table>
-  @endif
 @endsection

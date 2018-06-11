@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Team;
+use App\League;
 
 class TeamController extends Controller
 {
@@ -18,7 +19,7 @@ class TeamController extends Controller
 
       $thisUser = $request->user();
       $teams=Team::all();
-
+      $leagues=League::all();
       foreach($teams as $key=> $team)
       {
         if ($like!==null && (stripos($team['name'], $like) === FALSE))
@@ -27,7 +28,7 @@ class TeamController extends Controller
         }
       }
 
-      return view('teams',['teams'=>$teams]);
+      return view('teams',['teams'=>$teams, 'leagues'=>$leagues]);
     }
 
     /**
@@ -35,9 +36,15 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+      $teams = new Team();
+      $teams->league_id = $request['addID'];
+      $teams->name = $request['addName'];
+      $teams->team_description = $request['addDesc'];
+      $teams->created_on = $request['addDate'];
+      $teams->save(['timestamps' => false]);
+      return redirect()->back();
     }
 
     /**

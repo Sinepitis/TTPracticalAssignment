@@ -47,3 +47,14 @@ Route::post('/register/submit','RegisterController@submit')->middleware('roles:0
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/leagues/Add','LeagueController@create')->middleware('roles:2');
+
+Route::get('/players/Add','ParticipantController@create')->middleware('roles:2');
+
+Route::get('/tournaments/Add','TournamentController@create')->middleware('roles:2');
+
+Route::get('/teams/Add','TeamController@create')->middleware('roles:2');
+
+Route::get('/games/Add', 'GamesController@create')->middleware('roles:2');
+Route::post('/games/Delete', 'GamesController@delete')->middleware('roles:0');

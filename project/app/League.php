@@ -8,6 +8,7 @@ class League extends Model
 {
     protected $table='league';
 
+    public $timestamps = false;
     public function tournament(){
       return $this->belongsTo('App\Tournament');
     }

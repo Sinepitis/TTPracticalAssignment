@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Games;
+use App\Team;
+use App\League;
+use App\Tournament;
 
 class GamesController extends Controller
 {
@@ -18,6 +21,8 @@ class GamesController extends Controller
 
       $thisUser = $request->user();
       $games=Games::all();
+      $teams=Team::all();
+      $tournaments=Tournament::all();
 
       foreach ($games as $key => $game)
       {
@@ -27,7 +32,7 @@ class GamesController extends Controller
         }
       }
 
-        return view('games',['games'=>$games]);
+        return view('games',['games'=>$games, 'tournaments'=>$tournaments, 'teams'=>$teams]);
     }
 
     /**
@@ -35,9 +40,26 @@ class GamesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+
+        $games = new Games();
+        $games->team_id_1 = $request['addTeamID1'];
+        $games->team_id_2 = $request['addTeamID2'];
+        $games->tournament_id = $request['addTournID'];
+        $games->Team1_score = $request['addSCT1'];
+        $games->Team2_score = $request['addSCT2'];
+        $games->description = $request['addDesc'];
+        $games->date_of_game = $request['addDate'];
+        $games->save(['timestamps' => false]);
+        return redirect()->back();
+    }
+    public function delete(Request $request)
+    {
+      //  $game =
+        (Games::where('game_id',$request['gameId'])->first())->delete();
+        //$game->delete();
+        return redirect()->back();
     }
 
     /**
